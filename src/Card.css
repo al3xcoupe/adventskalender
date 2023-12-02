@@ -93,3 +93,8 @@
     margin: 0 auto; /* Zentrierung des Buttons */
   }
 }
+
+.day-image {
+  width: 100%;
+  height: auto;
+}

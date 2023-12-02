@@ -4,6 +4,10 @@ import './Card.css';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
+// Bilder importieren
+import meme1 from './bilder/meme1.jpg';
+// Weitere Bilder importieren, falls vorhanden...
+
 const Card = ({ day, content, isActive, onEnable }) => {
   const [isEnabled, setIsEnabled] = useState(false);
 
@@ -34,7 +38,15 @@ const Card = ({ day, content, isActive, onEnable }) => {
       </div>
       <div className="card-content">
         {isEnabled ? (
-          content
+          typeof content === 'string' ? (
+            content.endsWith('.jpg') || content.endsWith('.png') ? (
+              <img src={content} alt={`Tag ${day}`} className="day-image" />
+            ) : (
+              content
+            )
+          ) : (
+            content
+          )
         ) : (
           <button className={`card-button ${isActive ? 'active' : ''}`} onClick={handleClick} disabled={!isActive}>
             {isActive ? <LockOpenOutlinedIcon className="unlocked-icon" /> : <LockOutlinedIcon className="locked-icon" />}
@@ -55,6 +67,7 @@ const Adventskalender = () => {
   const adventData = [
     'Das isch min Adventskalender für dich, 100% selfmade und min ganz viel liebi!!!! ich liebe dich yasmin!!!',
     'Lies hüt Jeremia 31,3',
+    meme1, // Bild als importierte Ressource verwenden
     'Inhalt Tag 3',
     // ... und so weiter für jeden Tag bis 24
   ];
