@@ -1,0 +1,44 @@
+/* Adventskalender.css */
+
+.adventskalender {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+
+/* Kartenanpassungen für Mobilgeräte */
+.card {
+  width: calc(100% - 40px); /* Kartenbreite für Mobilgeräte */
+  max-width: 400px; /* Maximale Breite der Karten */
+}
+
+/* Media Query für Mobilgeräte */
+@media screen and (max-width: 768px) {
+  .adventskalender {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduzieren des Abstands zwischen den Karten */
+  }
+
+  .card {
+    width: calc(100% - 20px); /* Vollständige Breite für Karten auf Mobilgeräten */
+    max-width: none; /* Entfernen der maximalen Breitenbeschränkung */
+  }
+
+  .card-header {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+
+  .card-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

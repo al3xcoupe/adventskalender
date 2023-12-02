@@ -1,0 +1,95 @@
+/* Card.css */
+
+.card {
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #aa0000; /* Dunkleres Rot für deaktivierte Karten */
+  cursor: not-allowed;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  width: calc(100% - 20px); /* Nutzt die volle Breite des Bildschirms, abzüglich des Randabstands */
+  max-width: 500px; /* Maximale Breite der Karte, wenn der Bildschirm breiter ist als 500px */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.card-disabled {
+  background-color: #ab4545; /* Dunkleres Rot für deaktivierte Karten */
+  cursor: not-allowed;
+}
+
+.card-header {
+  font-size: 1.8rem; /* Größere Schriftgröße für den Titel */
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff; /* Weißer Text für Kopfzeile */
+}
+
+.card-content {
+  color: #fff; /* Weißer Text für Inhalt */
+}
+
+.card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #fff; /* Weiß für Button der geöffneten Karten */
+  color: #333; /* Dunkler Text für Button */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card-button.active {
+
+
+  background-color: #006400; /* Dunkles Rot für Button der nicht geöffneten Karten */
+  color: #fff; /* Weißer Text für Button */
+}
+
+.card-button .MuiSvgIcon-root {
+  margin-right: 5px;
+}
+
+.card-button:disabled {
+  cursor: not-allowed;
+}
+
+/* Weitere Styles hier anpassen */
+
+
+/* Media Query für Mobilgeräte */
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 90%; /* Maximale Breite auf mobilen Geräten */
+    padding-bottom: 30px; /* Reduzierte Polsterung für Karten auf mobilen Geräten */
+    padding-top: 30px; /* Reduzierte Polsterung für Karten auf mobilen Geräten */
+
+    margin-bottom: 30px; 
+  }
+
+  .card-header {
+    font-size: 2rem; /* Größere Schriftgröße für den Header auf mobilen Geräten */
+  }
+
+  
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+
+  .card-button {
+    padding: 15px 30px; /* Größere Polsterung für den Button */
+    font-size: 1.2rem; /* Größere Schriftgröße für den Button */
+    width: 100%; /* Volle Breite für den Button */
+    max-width: 300px; /* Maximale Breite für den Button */
+    margin: 0 auto; /* Zentrierung des Buttons */
+  }
+}

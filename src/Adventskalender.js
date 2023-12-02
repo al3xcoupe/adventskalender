@@ -1,0 +1,90 @@
+import React, { useState, useEffect } from 'react';
+import './Adventskalender.css';
+import './Card.css';
+import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+
+const Card = ({ day, content, isActive, onEnable }) => {
+  const [isEnabled, setIsEnabled] = useState(false);
+
+  useEffect(() => {
+    const openedCards = JSON.parse(localStorage.getItem('openedCards')) || [];
+    if (openedCards.includes(day)) {
+      setIsEnabled(true);
+    }
+  }, [day]);
+
+  const handleClick = () => {
+    setIsEnabled(true);
+    onEnable(day);
+
+    const openedCards = JSON.parse(localStorage.getItem('openedCards')) || [];
+    if (!openedCards.includes(day)) {
+      const updatedOpenedCards = [...openedCards, day];
+      localStorage.setItem('openedCards', JSON.stringify(updatedOpenedCards));
+    }
+  };
+
+  const cardClass = isActive ? 'card' : 'card card-disabled';
+
+  return (
+    <div className={cardClass}>
+      <div className="card-header">
+        {day}.Dezember
+      </div>
+      <div className="card-content">
+        {isEnabled ? (
+          content
+        ) : (
+          <button className={`card-button ${isActive ? 'active' : ''}`} onClick={handleClick} disabled={!isActive}>
+            {isActive ? <LockOpenOutlinedIcon className="unlocked-icon" /> : <LockOutlinedIcon className="locked-icon" />}
+            {isActive ? 'Öffnen' : ''}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Adventskalender = () => {
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate(); // Aktuelles Tagesdatum
+
+  const [enabledDays, setEnabledDays] = useState([]);
+
+  const adventData = [
+    'Das isch min Adventskalender für dich, 100% selfmade und min ganz viel liebi!!!! ich liebe dich yasmin!!!',
+    'Lies hüt Jeremia 31,3',
+    'Inhalt Tag 3',
+    // ... und so weiter für jeden Tag bis 24
+  ];
+
+  // Erzeugen von Daten für 24 Tage
+  for (let i = 3; i < 24; i++) {
+    adventData.push(`Inhalt Tag ${i + 1}`);
+  }
+
+  const handleEnableDay = (day) => {
+    setEnabledDays([...enabledDays, day]);
+  };
+
+  return (
+    <div className="adventskalender">
+      {adventData.map((item, index) => {
+        const isActive = index + 1 <= currentDay || enabledDays.includes(index + 1);
+        return (
+          <Card
+            className="card"
+            key={index + 1}
+            day={index + 1}
+            content={item}
+            isActive={isActive}
+            onEnable={handleEnableDay}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+export default Adventskalender;
