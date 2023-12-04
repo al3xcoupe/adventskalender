@@ -7,6 +7,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 // Bilder importieren
 import meme1 from './bilder/meme1.jpg';
 import meme2 from './bilder/bild2.png';
+import meme3 from './bilder/meme2.jpg';
 // Weitere Bilder importieren, falls vorhanden...
 
 const Card = ({ day, content, isActive, onEnable }) => {
@@ -70,6 +71,7 @@ const Adventskalender = () => {
     'Lies hüt Jeremia 31,3',
     meme1, // Bild als importierte Ressource verwenden
     meme2,
+    meme3,
     // ... und so weiter für jeden Tag bis 24
   ];
 
