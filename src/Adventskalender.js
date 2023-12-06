@@ -8,6 +8,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import meme1 from './bilder/meme1.jpg';
 import meme2 from './bilder/bild2.png';
 import meme3 from './bilder/meme2.jpg';
+import meme4 from './bilder/gedicht1.png'
+
 // Weitere Bilder importieren, falls vorhanden...
 
 const Card = ({ day, content, isActive, onEnable }) => {
@@ -43,6 +45,11 @@ const Card = ({ day, content, isActive, onEnable }) => {
           typeof content === 'string' ? (
             content.endsWith('.jpg') || content.endsWith('.png') ? (
               <img src={content} alt={`Tag ${day}`} className="day-image" />
+            ) : content.endsWith('.mov')|| content.endsWith('.MOV') ? (
+              <video controls className="day-video">
+                <source src={content} type="video/quicktime" />
+                Dein Browser unterstützt das Videoformat nicht.
+              </video>
             ) : (
               content
             )
@@ -58,6 +65,7 @@ const Card = ({ day, content, isActive, onEnable }) => {
       </div>
     </div>
   );
+  
 };
 
 const Adventskalender = () => {
@@ -72,6 +80,9 @@ const Adventskalender = () => {
     meme1, // Bild als importierte Ressource verwenden
     meme2,
     meme3,
+    meme4, 
+    'Du bisch s beste, was mir je passiert isch, und ich bin so dankbar, dich ih mim lebe zha.',
+
     // ... und so weiter für jeden Tag bis 24
   ];
 
