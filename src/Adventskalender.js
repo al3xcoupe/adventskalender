@@ -85,6 +85,7 @@ const Adventskalender = () => {
     meme4, 
     'Du bisch s beste, was mir je passiert isch, und ich bin so dankbar, dich ih mim lebe zha.',
     bild44,
+    'Lies hüt 1. Korinther 13,13'
 
     // ... und so weiter für jeden Tag bis 24
   ];
