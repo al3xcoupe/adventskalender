@@ -12,7 +12,7 @@ import meme4 from './bilder/gedicht1.png'
 import bild44 from './bilder/bild44.jpg'
 import meme5 from './bilder/meme45.jpg'
 import meme6 from './bilder/meme69.png'
-import meme7 from './bilder/bild66.jpg'
+import meme7 from './bilder/d1.jpg'
 
 // Weitere Bilder importieren, falls vorhanden...
 
