@@ -106,7 +106,7 @@ const Adventskalender = () => {
     meme16,
     meme17,
     meme18,
-    meme19
+    meme19,
     // ... und so weiter für jeden Tag bis 24
   ];
 
