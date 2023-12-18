@@ -19,7 +19,7 @@ import meme10 from './bilder/alex.jpg'
 import meme16 from './bilder/meme16.jpg'
 import meme17 from './bilder/meme17.jpg'
 import meme18 from './bilder/meme18.jpg'
-
+import meme19 from './bilder/19.png'
 
 
 
@@ -105,7 +105,8 @@ const Adventskalender = () => {
     meme10,
     meme16,
     meme17,
-    meme18
+    meme18,
+    meme19
     // ... und so weiter für jeden Tag bis 24
   ];
 
