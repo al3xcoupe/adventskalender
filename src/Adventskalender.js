@@ -116,6 +116,7 @@ const Adventskalender = () => {
     meme21,
     meme22,
     meme23,
+    'Happy Christmas!! Jetzt fanged wienachte ah. Die erste wiehnachte zwüsched eus. Ich weiss wie wichtig dir das isch und darum wirds au mir jetzt wichtiger als vorher. Ich hoffe mir hend ih de nechste Ziit eh gueti ziit und bin au scho gspannt wie das wird mal mit dinere familie. vilicht chasch mich ja au überzüge en pulli ahzieh. das ischs endi vo dem adventskalennder und ich hoffe er het dir gfalle. bis zude nächste adventsziit. ich liebe dich übrer alles yasmin, mis grösste wienachtsgschenk'
     // ... und so weiter für jeden Tag bis 24
   ];
 
