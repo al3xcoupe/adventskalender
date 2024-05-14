@@ -7,7 +7,7 @@ import Adventskalender from './Adventskalender';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Adventskalender />
+    <App />
   </React.StrictMode>
 );
 
